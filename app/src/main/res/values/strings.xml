@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Umons Horaire</string>
+    <string name="search">Search</string>
+    <string name="spinner_text">Select an classroom</string>
+    <string name="spinner_contentDescription">Select a classroom</string>
+    <string name="update">Update</string>
+    <string-array name="amphi_array">
+        <item>NiGA.VanGogh</item>
+        <item>NiGA.Gutenberg</item>
+        <item>NiGA.Plisnier</item>
+        <item>NiGA.Curie</item>
+        <item>NiVésale.020</item>
+        <item>NiVésale.023</item>
+        <item>NiVésale.025</item>
+        <item>NiVésale.LaFontaine</item>
+    </string-array>
+
+</resources>
