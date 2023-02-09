@@ -1,10 +1,12 @@
 package com.example.umonshoraire;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 public class UImanager {
 
@@ -23,7 +25,7 @@ public class UImanager {
      * @return Runnable object
      */
     protected Runnable updateSpinnerRunnable(boolean bool, Activity activity) {
-        return () -> activity.findViewById(R.id.amphi_spinner).setEnabled(bool);
+        return () -> activity.findViewById(R.id.menu).setEnabled(bool);
     }
 
     protected Runnable updateButtons(boolean state, Activity activity) {

@@ -5,16 +5,20 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
 
     public static String amphi;
@@ -31,10 +35,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         ScheduledExecutorService backgroundReq = Executors.newSingleThreadScheduledExecutor();
 
 
-        Spinner spinner = findViewById(R.id.amphi_spinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.amphi_array, android.R.layout.simple_spinner_dropdown_item);
+        AutoCompleteTextView spinner = findViewById(R.id.menu_text);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.amphi_array,  R.layout.textinput_item);
         spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
+        spinner.setOnItemClickListener(this);
 
         Button buttonSearch = findViewById(R.id.button_search);
         buttonSearch.setOnClickListener(view -> {
@@ -48,19 +53,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         });
     }
 
-
-
-    //Recupérer l'amphi
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-        Log.d("Spinner", "onItemSelected: " + parent.getItemAtPosition(pos));
-        amphi = parent.getItemAtPosition(pos).toString();
-
-
+    public void error() {
+        Toast.makeText(this, "Aucun amphi sélectionné", Toast.LENGTH_SHORT).show();
     }
 
     @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
-
+    public void onItemClick(AdapterView<?> parent, View view, int pos, long l) {
+        Log.d("ArrayAdapter", "onItemSelected: " + parent.getItemAtPosition(pos));
+        amphi = parent.getItemAtPosition(pos).toString();
     }
 }
