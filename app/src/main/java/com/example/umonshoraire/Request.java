@@ -3,11 +3,6 @@ package com.example.umonshoraire;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.AssetManager;
-import android.os.Handler;
-import android.os.Looper;
-import android.util.Log;
-import android.widget.Button;
-import android.widget.ProgressBar;
 
 import java.io.BufferedReader;
 import java.io.FileOutputStream;
