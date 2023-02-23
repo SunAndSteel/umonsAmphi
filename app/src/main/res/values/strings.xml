@@ -4,6 +4,7 @@
     <string name="spinner_text">Select an classroom</string>
     <string name="spinner_contentDescription">Select a classroom</string>
     <string name="update">Update</string>
+    <string name="textview">TextView</string>
     <string-array name="amphi_array">
         <item>NiGA.VanGogh</item>
         <item>NiGA.Gutenberg</item>
